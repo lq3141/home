@@ -1,0 +1,15 @@
+[submodule "vim/pack/q-plugins/start/verilog_systemverilog.vim"]
+	path = vim/pack/q-plugins/start/verilog_systemverilog.vim
+	url = https://github.com/vhda/verilog_systemverilog.vim.git
+[submodule "vim/pack/q-plugins/start/tabular"]
+	path = vim/pack/q-plugins/start/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/pack/q-plugins/start/vim-colors-solarized"]
+	path = vim/pack/q-plugins/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/pack/q-plugins/start/vim-matchit"]
+	path = vim/pack/q-plugins/start/vim-matchit
+	url = https://github.com/adelarsq/vim-matchit.git
+[submodule "vim/pack/q-plugins/start/vim-surround"]
+	path = vim/pack/q-plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git

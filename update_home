@@ -1,0 +1,13 @@
+#!/bin/bash
+## find root directory
+dir_name=$(dirname "$0")
+echo "source directory = $dir_name"
+
+## vim
+rm -rf ~/.vim
+rm -rf ~/.vimrc
+
+ln -s ${dir_name}/vim   ~/.vim
+ln -s ${dir_name}/vimrc ~/.vimrc
+
+
