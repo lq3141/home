@@ -13,3 +13,18 @@
 [submodule "vim/pack/q-plugins/start/vim-surround"]
 	path = vim/pack/q-plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "emacs.d/lisp/verilog-mode"]
+	path = emacs.d/verilog-mode
+	url = https://github.com/veripool/verilog-mode.git
+[submodule "emacs.d/lisp/swiper"]
+	path = emacs.d/lisp/swiper
+	url = https://github.com/abo-abo/swiper.git
+[submodule "emacs.d/lisp/smex"]
+	path = emacs.d/lisp/smex
+	url = https://github.com/nonsequitur/smex.git
+[submodule "emacs.d/lisp/spacemacs-theme"]
+	path = emacs.d/spacemacs-theme
+	url = https://github.com/nashamri/spacemacs-theme.git
+[submodule "emacs.d/lisp/evil"]
+	path = emacs.d/lisp/evil
+	url = https://github.com/emacs-evil/evil.git
