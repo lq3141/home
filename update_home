@@ -13,7 +13,7 @@ ln -s ${dir_name}/vimrc ~/.vimrc
 
 git submodule update --init --recursive --progress
 
-##
+## emacs
 if [ -e myelpa.zip ]; then
     echo "Info   : myelpa available already! skip download/unzip."
 else
@@ -25,4 +25,26 @@ if [ -e ~/.emacs.d ]; then
     mv ~/.emacs.d ~/.emacs.d.old
 fi
 ln -s ${dir_name}/emacs.d ~/.emacs.d
+
+## git
+if ! [ -e ~/.gitconfig ]; then
+    ln -s ${dir_name}/gitconfig ~/.gitconfig
+else
+    echo "Warning: .gitconif exist!"
+fi
+
+## bashrc
+if ! [ -e ~/.bashrc ]; then
+    ln -s ${dir_name}/bashrc ~/.bashrc
+    ln -s ${dir_name}/bash_functions ~/.bash_functions
+else
+    echo "Warning: .bashrc exist!"
+fi
+
+## tmux
+if ! [ -e ~/.tmux.conf]; then
+    ln -s ${dir_name}/tmux.conf ~/.tmux.conf
+else
+    echo "Warning: .tmux.conf exist!"
+fi
 

@@ -17,7 +17,10 @@ alias cdw='cd /projects/ATHENA/users/qili'
 alias sshvnc="ssh 10.10.25.22"
 
 # if not running interactively, don't do anything
+# two command line below are same effect
+#[[ "$-" != *i* ]] && return
 [ -z "$PS1" ] && return
+
 ## general
 export TERM=xterm-256color
 
