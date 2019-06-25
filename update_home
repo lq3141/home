@@ -1,6 +1,7 @@
 #!/bin/bash
 ## find root directory
-dir_name=$(dirname "$0")
+dir_name_rel=$(dirname "$0")
+dir_name=$(cd $(dirname $dir_name_rel); pwd -P)/$(basename $dir_name_rel)
 echo "source directory = $dir_name"
 
 ## vim
@@ -10,4 +11,16 @@ rm -rf ~/.vimrc
 ln -s ${dir_name}/vim   ~/.vim
 ln -s ${dir_name}/vimrc ~/.vimrc
 
+##
+if [ -e myelpa.zip ]; then
+    echo "Info   : myelpa available already! skip download/unzip."
+else
+    curl https://codeload.github.com/redguardtoo/myelpa/zip/stable -o myelpa.zip
+    unzip myelpa.zip
+fi
+
+if [ -e ~/.emacs.d ]; then
+    mv ~/.emacs.d ~/.emacs.d.old
+fi
+ln -s ${dir_name}/emacs.d ~/.emacs.d
 

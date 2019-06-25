@@ -20,7 +20,7 @@
       (concat "https://" addr)
     (concat "http://" addr)))
 
-(setq package-archives '(("localelpa" . "~/.emacs.d/localelpa/") ("myelpa" . "~/myelpa/")))
+(setq package-archives '(("localelpa" . "~/.emacs.d/localelpa/") ("myelpa" . "~/.emacs.d/myelpa-repos/")))
 ;;(package-refresh-contents)
 
 
