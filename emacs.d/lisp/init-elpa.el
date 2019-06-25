@@ -20,7 +20,10 @@
       (concat "https://" addr)
     (concat "http://" addr)))
 
-(setq package-archives '(("localelpa" . "~/.emacs.d/localelpa/") ("myelpa" . "~/.emacs.d/myelpa-repos/")))
+;; + remove localelpa, since there's no archive-contents file.
+;;   under latest emacs revision, it'll report error.
+;;(setq package-archives '(("localelpa" . "~/.emacs.d/localelpa/") ("myelpa" . "~/.emacs.d/myelpa-repos/")))
+(setq package-archives '(                                        ("myelpa" . "~/.emacs.d/myelpa-repos/")))
 ;;(package-refresh-contents)
 
 

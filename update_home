@@ -1,6 +1,6 @@
 #!/bin/bash
 ## find root directory
-dir_name_rel=$(dirname "$0")
+dir_name_rel=$(dirname $0)
 dir_name=$(cd $(dirname $dir_name_rel); pwd -P)/$(basename $dir_name_rel)
 echo "source directory = $dir_name"
 
@@ -10,6 +10,8 @@ rm -rf ~/.vimrc
 
 ln -s ${dir_name}/vim   ~/.vim
 ln -s ${dir_name}/vimrc ~/.vimrc
+
+git submodule update --init --recursive --progress
 
 ##
 if [ -e myelpa.zip ]; then
