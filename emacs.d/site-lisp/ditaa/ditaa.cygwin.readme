@@ -1,0 +1,5 @@
+follow link below
+https://emacs.stackexchange.com/questions/20731/setting-up-ditaa-in-org-mode
+
+1. setup up emacs.d/site-lisp/ditaa
+2. define org-babel-ditaa-java-cmd and org-ditaa-jar-path variable

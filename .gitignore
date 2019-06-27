@@ -4,3 +4,5 @@ emacs.d/elpa
 emacs.d/recentf*
 emacs.d/custom.el*
 vim/.netrwhist
+ditaa
+ditaa0_9.zip

@@ -5,6 +5,9 @@
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 
+(setq *cygwin* (eq system-type 'cygwin) )
+(setq *linux* (or (eq system-type 'gnu/linux) (eq system-type 'linux)) )
+(setq *emacs26* (>= emacs-major-version 26))
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -45,6 +48,7 @@
 ;;(require 'init-editing-utils)
 (require 'init-evil)
 (require 'init-verilog)
+(require 'init-org)
 
 ;;;; smex
 ;;(require 'smex)
