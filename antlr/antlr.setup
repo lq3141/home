@@ -1,10 +1,14 @@
 #!/bin/bash
 
 if [ `uname -o` == "Cygwin" ]; then
+    ## On window, java is window native.
+    #  java executable use window CLASSPATH variable, which is 
+    #  SEMICOLON separated.
     antlr_root=`readlink ~/.antlr`
     antlr_jar=`cygpath -w ~/${antlr_root}/antlr-4.7.2-complete.jar`
     export CLASSPATH=".;${antlr_jar};$CLASSPATH"
 else
+    ## on POSIX system, CLASSPATH is COLON separated.
     export CLASSPATH=".:~/.antlrl/antlr-4.7.2-complete.jar"
 fi
 
