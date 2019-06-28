@@ -28,3 +28,6 @@
 [submodule "emacs.d/lisp/evil"]
 	path = emacs.d/lisp/evil
 	url = https://github.com/emacs-evil/evil.git
+[submodule "vim/pack/q-plugins/start/vim-antlr"]
+	path = vim/pack/q-plugins/start/vim-antlr
+	url = https://github.com/dylon/vim-antlr.git

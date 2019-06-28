@@ -60,6 +60,7 @@
 
 (require 'init-markdown)
 (require 'init-yasnippet)
+(require 'init-clipboard)
 
 ;;(require 'init-editing-utils)
 (require 'init-evil)

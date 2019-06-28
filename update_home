@@ -55,3 +55,12 @@ else
     echo "Warning: .tmux.conf exist!"
 fi
 
+## antlr
+curl https://www.antlr.org/download/antlr-4.7.2-complete.jar -o antlr/antlr-4.7.2-complete.jar
+if [ -e ~/.antlr ]; then
+    rm ~/.antlr
+fi
+
+ln -s ${dir_name}/antlr ~/.antlr
+source ~/.antlr/antlr.setup
+

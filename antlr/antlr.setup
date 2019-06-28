@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ `uname -o` == "Cygwin" ]; then
+    antlr_root=`readlink ~/.antlr`
+    antlr_jar=`cygpath -w ~/${antlr_root}/antlr-4.7.2-complete.jar`
+    export CLASSPATH=".;${antlr_jar};$CLASSPATH"
+else
+    export CLASSPATH=".:~/.antlrl/antlr-4.7.2-complete.jar"
+fi
+
+alias antlr4="java org.antlr.v4.Tool -Dlanguage=Python3"
+alias grun="java org.antlr.v4.gui.TestRig -Dlanguage=Python3"
+
+#pip3 install antlr4-python3-runtime
