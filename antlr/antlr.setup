@@ -12,7 +12,8 @@ else
     export CLASSPATH=".:~/.antlrl/antlr-4.7.2-complete.jar"
 fi
 
-alias antlr4="java org.antlr.v4.Tool -Dlanguage=Python3"
-alias grun="java org.antlr.v4.gui.TestRig -Dlanguage=Python3"
+alias antlr4="java org.antlr.v4.Tool"
+alias grun="java org.antlr.v4.gui.TestRig"
+#alias antlr4py="java org.antlr.v4.Tool -Dlanguage=Python3"
 
 #pip3 install antlr4-python3-runtime
