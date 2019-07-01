@@ -4,6 +4,12 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# enable module as early as possible
+if [[ `type -t module` ==  "function" ]]; then
+    ## customize path define below
+    echo "Info   : module found!";
+fi
+
 ## utils (high priority)
 export LD_LIBRARY_PATH=/home/qili/Util/local/lib:${LD_LIBRARY_PATH}
 export PATH=/home/qili/Util/local/bin:/usr/local/bin:${PATH}
@@ -71,7 +77,12 @@ if [ -f "${HOME}/.bash_functions" ]; then
 fi
 
 if [ `uname -o` == "Cygwin" ]; then
+    ## x server
     export DISPLAY=:0.0
+
+    ## java se on windows
+    export PATH=/cygdrive/c/Program\ Files/Java/jdk-11.0.3/bin:${PATH}
+
 
     # added by Anaconda3 2018.12 installer
     # >>> conda init >>>

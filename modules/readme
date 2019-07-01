@@ -1,0 +1,17 @@
+
+* ref
+  + comprehensive intro: https://blog.geoghegan.me/linux/installing-environment-modules
+  + https://github.com/cea-hpc/modules
+* doc
+  + https://modules.readthedocs.io
+
+* install
+  + module needs tclConfig.sh
+    on cygwin, this file is in tcl-tk-devel package, after install /lib/tclConfig.sh
+  + modules needs autopoint, 
+    on cygwin, which is in gettext-devel package
+  + After fix two above. Finally make module happy with 
+    ./configure --prefix=/home/qili/test/install --with-tcl=/lib
+    + --modulefilesdir, which change the directory contains modulefiles
+    + --enable-dotmodulespath
+  + READ INSTALL.rst
