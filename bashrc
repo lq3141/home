@@ -83,7 +83,7 @@ if [ `uname -o` == "Cygwin" ]; then
     ## java se on windows
     export PATH=/cygdrive/c/Program\ Files/Java/jdk-11.0.3/bin:${PATH}
 
-
+elif [ `uname -o` == "GNU/Linux" ]; then
     # added by Anaconda3 2018.12 installer
     # >>> conda init >>>
     # !! Contents within this block are managed by 'conda init' !!
