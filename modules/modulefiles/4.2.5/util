@@ -1,0 +1,16 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+    puts stderr "\tThe Util Module\n"
+    puts stderr "\tThis module adds util/local to your path."
+}
+
+module-whatis	"loads the util environment"
+
+# for Tcl script use only
+prepend-path    PATH            $env(HOME)/Util/local/bin:/usr/local/bin
+prepend-path    MANPATH         $env(HOME)/Util/local/share/man:/usr/local/share/man
+prepend-path    LD_LIBRARY_PATH $env(HOME)/Util/local/lib
+

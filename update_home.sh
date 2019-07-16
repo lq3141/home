@@ -1,4 +1,3 @@
-#!/bin/bash
 ## find root directory
 #echo " - $0 -"
 dir_name_rel=$(dirname $0)

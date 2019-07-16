@@ -5,14 +5,25 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # enable module as early as possible
+if [ `uname -o` == "Cygwin" ]; then
+    source ~/Util/local/modules/tcl8.6/4.2.5/init/bash
+elif [ `uname -o` == "GNU/Linux" ]; then
+    echo "Error  : not available yet"
+fi
 if [[ `type -t module` ==  "function" ]]; then
     ## customize path define below
-    echo "Info   : module found!";
+    echo "Info   : module enabled!";
 fi
 
-## utils (high priority)
-export LD_LIBRARY_PATH=/home/qili/Util/local/lib:${LD_LIBRARY_PATH}
-export PATH=/home/qili/Util/local/bin:/usr/local/bin:${PATH}
+if [ -z ${MODULESHOME+x} ]; then
+    ## utils (high priority)
+    export LD_LIBRARY_PATH=/home/qili/Util/local/lib:${LD_LIBRARY_PATH}
+    export PATH=/home/qili/Util/local/bin:/usr/local/bin:${PATH}
+else
+    module load dot
+    module load modules
+    module load util
+fi
 
 # projects
 #newgrp sha_dig
@@ -81,8 +92,8 @@ if [ `uname -o` == "Cygwin" ]; then
     export DISPLAY=:0.0
 
     ## java se on windows
-    export PATH=/cygdrive/c/Program\ Files/Java/jdk-11.0.3/bin:${PATH}
-
+    # since jdk path is set in windows, no need to add again
+    #export PATH=/cygdrive/c/Program\ Files/Java/jdk-11.0.3/bin:${PATH}
 elif [ `uname -o` == "GNU/Linux" ]; then
     # added by Anaconda3 2018.12 installer
     # >>> conda init >>>
