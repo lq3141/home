@@ -27,5 +27,5 @@ cd -
 if [ -d $modfiles_dir ]; then
     rm -rf $modfiles_dir
 fi
-cp -r modulefiles $prefix_root
+cp -rL modulefiles $prefix_root
 
