@@ -12,14 +12,14 @@ module-whatis	"loads the antlr environment"
 # for Tcl script use only
 if { [exec uname -o] == "Cygwin" } {
     set antlr_root  [file readlink ~/.antlr]
-    set antlr_jar   [exec cygpath -w ${antlr_root}/antlr-4.7.2-complete.jar]
-    set jdk_lib_lnx [file dirname [file dirname [exec which java]]]
-    set jdk_lib     [exec cygpath -w $jdk_lib_lnx]
+    set antlr_jar   [exec cygpath -aw ${antlr_root}/antlr-4.7.2-complete.jar]
+    set jdk_lib_lnx [file dirname [file dirname [exec which java]]]/lib
+    set jdk_lib     [exec cygpath -aw $jdk_lib_lnx]
 
+    #setenv ANTLR_JAR $antlr_jar
+    # If windows related CLASSPATH is defined already, nothing duplicated path
+    # this's the beauty of module. Nice
     prepend-path    -d ";"  CLASSPATH  [subst -nobackslashes ".;${antlr_jar};${jdk_lib}"]
-
-    unsetenv antlr_jar
-    unsetenv jdk_lib
 } else {
     prepend-path            CLASSPATH   .:~/.antlr/antlr-4.7.2-complete.jar
 }
