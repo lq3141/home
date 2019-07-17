@@ -10,7 +10,7 @@ proc ModulesHelp { } {
 module-whatis	"loads the maven environment"
 
 # for Tcl script use only
-append-path    PATH ~/Util/local/maven/apache-maven-3.6.1/bin
+append-path    PATH ~/Util/maven/apache-maven-3.6.1/bin
 
-setenv M2_HOME ~/Util/local/maven/apache-maven-3.6.1
+setenv M2_HOME ~/Util/maven/apache-maven-3.6.1
 

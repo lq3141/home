@@ -13,7 +13,7 @@ tcl_path=$(dirname $(dirname `which tclsh`))/lib
 tcl_ver=`echo "puts \\$tcl_version" | tclsh`
 
 # install
-prefix_root=$(cd ~;pwd)/Util/local/modules
+prefix_root=$(cd ~;pwd)/Util/modules
 prefix=${prefix_root}/tcl${tcl_ver}
 modfiles_dir=${prefix_root}/modulefiles/${modules_ver}
 echo "Info   : tcl config folder = ${tcl_path}"

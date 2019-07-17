@@ -6,7 +6,7 @@ fi
 
 # enable module as early as possible
 if [ `uname -o` == "Cygwin" ]; then
-    source ~/Util/local/modules/tcl8.6/4.2.5/init/bash
+    source ~/Util/modules/tcl8.6/4.2.5/init/bash
 elif [ `uname -o` == "GNU/Linux" ]; then
     echo "Error  : not available yet"
 fi
