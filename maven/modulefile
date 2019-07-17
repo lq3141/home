@@ -1,0 +1,16 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+proc ModulesHelp { } {
+    puts stderr "\tThe maven Module\n"
+    puts stderr "\tThis module adds maven to your path."
+}
+
+module-whatis	"loads the maven environment"
+
+# for Tcl script use only
+append-path    PATH ~/Util/local/maven/apache-maven-3.6.1/bin
+
+setenv M2_HOME ~/Util/local/maven/apache-maven-3.6.1
+

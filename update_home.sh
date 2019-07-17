@@ -32,12 +32,12 @@ git submodule update --init --recursive --progress
 if [[ -e myelpa.zip ]]; then
     echo "Info   : MYELPA available already! skip download/unzip."
 else
-    curl https://codeload.github.com/redguardtoo/myelpa/zip/stable -o myelpa.zip
+    wget https://codeload.github.com/redguardtoo/myelpa/zip/stable -O myelpa.zip
     unzip myelpa.zip
 fi
 
 if ! [[ -e ditaa0_9.zip ]]; then
-    curl https://jaist.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip -o ditaa0_9.zip
+    wget https://jaist.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip
     unzip -d ditaa ditaa0_9.zip
 else
     echo "Info   : DITAA available already! skip download/unzip."
@@ -62,7 +62,7 @@ ln -s ${dir_name}/tmux.conf ~/.tmux.conf
 
 ## antlr
 if ! [[ -e antlr/antlr-4.7.2-complete.jar ]]; then
-    curl https://www.antlr.org/download/antlr-4.7.2-complete.jar -o antlr/antlr-4.7.2-complete.jar
+    wget https://www.antlr.org/download/antlr-4.7.2-complete.jar
 fi
 clean_file ~/.antlr
 ln -s ${dir_name}/antlr ~/.antlr

@@ -1,7 +1,8 @@
 
 modules_ver=4.2.5
 if ! [[ -d  modules-${modules_ver} ]]; then
-    curl https://jaist.dl.sourceforge.net/project/modules/Modules/modules-${modules_ver}/modules-${modules_ver}.tar.gz -o modules-${modules_ver}.tar.gz
+    #curl https://jaist.dl.sourceforge.net/project/modules/Modules/modules-${modules_ver}/modules-${modules_ver}.tar.gz -o modules-${modules_ver}.tar.gz
+    wget https://jaist.dl.sourceforge.net/project/modules/Modules/modules-${modules_ver}/modules-${modules_ver}.tar.gz
     tar zxvf modules-${modules_ver}.tar.gz
 else
     echo "Info   : source code available already, skip download."
