@@ -9,6 +9,7 @@ echo "Info   : download setup.exe first."
 echo "         https://www.cygwin.com/setup-x86_64.exe "
 setup-x86_64.exe ^
 --quiet-mode ^
+--local-package-dir cygwin-repos ^
 --categories base ^
 --packages ^
 _autorebase,^
