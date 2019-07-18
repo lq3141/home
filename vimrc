@@ -8,6 +8,7 @@ set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
 " terminal 256
 let g:solarized_termcolors=256
 set t_Co=256
+set bg=dark
 if (has("gui_running"))
     "colorscheme desert
     "colorscheme molokai 
