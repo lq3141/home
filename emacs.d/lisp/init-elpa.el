@@ -90,7 +90,6 @@ Or, move the cl-lib.el to 'EMACS-INSTALLATION-PATH/lisp/emacs-lisp'")))
 ;; (fullframe list-packages quit-window)
 
 
-(require-package 'smex)
 (require-package 'markdown-mode)
 (require-package 'htmlize)
 (require-package 'diminish)
@@ -99,5 +98,6 @@ Or, move the cl-lib.el to 'EMACS-INSTALLATION-PATH/lisp/emacs-lisp'")))
 (require-package 'counsel) ; counsel => swiper => ivy
 (require-package 'undo-tree)
 (require-package 'yasnippet)
+;;(require-package 'smex)   ; weird, emacs complain can't find package
 
 (provide 'init-elpa)
