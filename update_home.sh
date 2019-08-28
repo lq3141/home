@@ -66,6 +66,27 @@ if ! [[ -e antlr/antlr-4.7.2-complete.jar ]]; then
 fi
 clean_file ~/.antlr
 ln -s ${dir_name}/antlr ~/.antlr
-source ~/.antlr/antlr.setup
+source ~/.antlr/setup.sh
+
+## local
+## for future tools install
+mkdir -p ~/Util/local
+
+## maven
+mkdir -p ~/Util/maven
+if ! [[ -e apache-maven-3.6.1-bin.tar.gz ]]; then
+    wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+fi
+if ! [[ -d ~/Util/maven/apache-maven-3.6.1 ]]; then
+    tar zxvf apache-maven-3.6.1-bin.tar.gz -C ~/Util/maven
+fi
+
+## module
+if ! [[ -d ~/Util/modules ]]; then
+    echo "Warning: module not exist, need install module as below"
+    echo "         cd modules"
+    echo "         ./installit.sh"
+    echo "         BE CAREFUL WITH THE DEPENDENCY, read readme"
+fi
 
 cd -

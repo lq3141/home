@@ -19,6 +19,7 @@ modfiles_dir=${prefix_root}/modulefiles/${modules_ver}
 echo "Info   : tcl config folder = ${tcl_path}"
 echo "         config prefix     = ${prefix}"
 echo "         module files dir  = ${modfiles_dir}"
+mkdir -p ~/Util/modules
 
 cd modules-${modules_ver}
 ./configure --prefix=${prefix} --with-tcl=${tcl_path} --with-modulepath=${modfiles_dir}:${prefix}/${modules_ver}/modulefiles --enable-doc-install --enable-versioning --enable-example-modulefiles --enable-dotmodulespath
