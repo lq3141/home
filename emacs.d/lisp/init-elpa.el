@@ -27,8 +27,8 @@
 ;; melpa, melpa-stable will require internet connection. If it slow down startup
 ;; time, remove this two items
 (setq package-archives '(
-                         ("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ;;("melpa" . "https://melpa.org/packages/")
+                         ;;("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("myelpa" . "~/.emacs.d/myelpa-repos/")))
 ;;(package-refresh-contents)
 

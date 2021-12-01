@@ -47,12 +47,13 @@ git submodule update --init --recursive --progress
 if [[ -e myelpa.zip ]]; then
     echo "Info   : MYELPA available already! skip download/unzip."
 else
-    wget  https://github.com/redguardtoo/emacs.d/archive/stable.zip -O myelpa.zip
+    wget https://github.com/redguardtoo/myelpa/archive/stable.zip -O myelpa.zip
     unzip myelpa.zip
-    # create a empty archivie-contents to make local repos happy
-    touch emacs.d-stable/archive-contents
     # move local repos to emacs.d to avoid complex symbol link issue
-    mv emacs.d-stable emacs.d
+    mv myelpa-stable emacs.d
+
+    # below is a good refernce, need to compare it with emacs.d I used
+    #wget  https://github.com/redguardtoo/emacs.d/archive/stable.zip -O emacs_d.zip
 fi
 
 if false; then
