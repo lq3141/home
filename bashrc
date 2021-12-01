@@ -6,23 +6,27 @@ fi
 
 # enable module as early as possible
 if [ `uname -o` == "Cygwin" ]; then
-    source ~/Util/modules/tcl8.6/4.2.5/init/bash
+    source ~/tools/modules/tcl8.6/4.2.5/init/bash
 elif [ `uname -o` == "GNU/Linux" ]; then
-    echo "Error  : not available yet"
+    if [[ -z $(command -v module) ]]; then
+        echo "Error  : modules not available yet"
+    fi
 fi
 if [[ `type -t module` ==  "function" ]]; then
     ## customize path define below
     echo "Info   : module enabled!";
 fi
 
-if [ -z ${MODULESHOME+x} ]; then
-    ## utils (high priority)
-    export LD_LIBRARY_PATH=/home/qili/Util/local/lib:${LD_LIBRARY_PATH}
-    export PATH=/home/qili/Util/local/bin:/usr/local/bin:${PATH}
+if [[ -z $(command -v module) ]]; then
+    ### tools (high priority)
+    #export LD_LIBRARY_PATH=/home/qili/tools/local/lib:${LD_LIBRARY_PATH}
+    #export PATH=/home/qili/tools/local/bin:/usr/local/bin:${PATH}
+    printf ""
 else
-    module load dot
-    module load modules
-    module load util
+    #module load dot
+    #module load modules
+    #module load tools
+    printf ""
 fi
 
 # projects
@@ -95,20 +99,23 @@ if [ `uname -o` == "Cygwin" ]; then
     # since jdk path is set in windows, no need to add again
     #export PATH=/cygdrive/c/Program\ Files/Java/jdk-11.0.3/bin:${PATH}
 elif [ `uname -o` == "GNU/Linux" ]; then
-    # added by Anaconda3 2018.12 installer
-    # >>> conda init >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$(CONDA_REPORT_ERRORS=false '/home/qili/Util/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        \eval "$__conda_setup"
-    else
-        if [ -f "/home/qili/Util/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/qili/Util/anaconda3/etc/profile.d/conda.sh"
-            CONDA_CHANGEPS1=false conda activate base
-        else
-            \export PATH="/home/qili/Util/anaconda3/bin:$PATH"
-        fi  
-    fi
-    unset __conda_setup
-    # <<< conda init <<<
+    printf ""
+    # anaconda should be enabled by default!!!
+
+    ## added by Anaconda3 2018.12 installer
+    ## >>> conda init >>>
+    ## !! Contents within this block are managed by 'conda init' !!
+    #__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/qili/tools/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+    #if [ $? -eq 0 ]; then
+    #    \eval "$__conda_setup"
+    #else
+    #    if [ -f "/home/qili/tools/anaconda3/etc/profile.d/conda.sh" ]; then
+    #        . "/home/qili/tools/anaconda3/etc/profile.d/conda.sh"
+    #        CONDA_CHANGEPS1=false conda activate base
+    #    else
+    #        \export PATH="/home/qili/tools/anaconda3/bin:$PATH"
+    #    fi  
+    #fi
+    #unset __conda_setup
+    ## <<< conda init <<<
 fi

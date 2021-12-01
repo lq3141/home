@@ -1,3 +1,4 @@
+#!/bin/bash
 ## find root directory
 #echo " - $0 -"
 dir_name_rel=$(dirname $0)
@@ -26,21 +27,24 @@ clean_file ~/.vimrc
 ln -s ${dir_name}/vimrc ~/.vimrc
 
 cd $dir_name
+echo "Warning: Git submodule operation may fail. If so, manually launch it later."
 git submodule update --init --recursive --progress
 
 ## emacs
 if [[ -e myelpa.zip ]]; then
     echo "Info   : MYELPA available already! skip download/unzip."
 else
-    wget https://codeload.github.com/redguardtoo/myelpa/zip/stable -O myelpa.zip
+    wget  https://github.com/redguardtoo/emacs.d/archive/stable.zip -O myelpa.zip
     unzip myelpa.zip
 fi
 
-if ! [[ -e ditaa0_9.zip ]]; then
-    wget https://jaist.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip
-    unzip -d ditaa ditaa0_9.zip
-else
-    echo "Info   : DITAA available already! skip download/unzip."
+if false; then
+    if ! [[ -e ditaa0_9.zip ]]; then
+        wget https://jaist.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip
+        unzip -d ditaa ditaa0_9.zip
+    else
+        echo "Info   : DITAA available already! skip download/unzip."
+    fi
 fi
 
 clean_file ~/.emacs.d
@@ -61,32 +65,38 @@ clean_file ~/.tmux.conf
 ln -s ${dir_name}/tmux.conf ~/.tmux.conf
 
 ## antlr
-if ! [[ -e antlr/antlr-4.7.2-complete.jar ]]; then
-    wget https://www.antlr.org/download/antlr-4.7.2-complete.jar
+if ! [[ -z ${HMENV_ANTLR_EN:x} ]]; then
+    if ! [[ -e antlr/antlr-4.7.2-complete.jar ]]; then
+        wget https://www.antlr.org/download/antlr-4.7.2-complete.jar
+    fi
+    clean_file ~/.antlr
+    ln -s ${dir_name}/antlr ~/.antlr
+    source ~/.antlr/setup.sh
 fi
-clean_file ~/.antlr
-ln -s ${dir_name}/antlr ~/.antlr
-source ~/.antlr/setup.sh
 
 ## local
 ## for future tools install
-mkdir -p ~/Util/local
+mkdir -p ~/tools/local
 
 ## maven
-mkdir -p ~/Util/maven
-if ! [[ -e apache-maven-3.6.1-bin.tar.gz ]]; then
-    wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
-fi
-if ! [[ -d ~/Util/maven/apache-maven-3.6.1 ]]; then
-    tar zxvf apache-maven-3.6.1-bin.tar.gz -C ~/Util/maven
+if false; then
+    mkdir -p ~/tools/maven
+    if ! [[ -e apache-maven-3.6.1-bin.tar.gz ]]; then
+        wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+    fi
+    if ! [[ -d ~/tools/maven/apache-maven-3.6.1 ]]; then
+        tar zxvf apache-maven-3.6.1-bin.tar.gz -C ~/tools/maven
+    fi
 fi
 
 ## module
-if ! [[ -d ~/Util/modules ]]; then
-    echo "Warning: module not exist, need install module as below"
-    echo "         cd modules"
-    echo "         ./installit.sh"
-    echo "         BE CAREFUL WITH THE DEPENDENCY, read readme"
+if false; then
+    if ! [[ -d ~/tools/modules ]]; then
+        echo "Warning: module not exist, need install module as below"
+        echo "         cd modules"
+        echo "         ./installit.sh"
+        echo "         BE CAREFUL WITH THE DEPENDENCY, read readme"
+    fi
 fi
 
 cd -
