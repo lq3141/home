@@ -49,6 +49,10 @@ if [[ -e myelpa.zip ]]; then
 else
     wget  https://github.com/redguardtoo/emacs.d/archive/stable.zip -O myelpa.zip
     unzip myelpa.zip
+    # create a empty archivie-contents to make local repos happy
+    touch emacs.d-stable/archive-contents
+    # move local repos to emacs.d to avoid complex symbol link issue
+    mv emacs.d-stable emacs.d
 fi
 
 if false; then
