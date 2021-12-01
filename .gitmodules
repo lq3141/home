@@ -16,9 +16,6 @@
 [submodule "emacs.d/lisp/verilog-mode"]
 	path = emacs.d/verilog-mode
 	url = https://github.com/veripool/verilog-mode.git
-[submodule "emacs.d/lisp/swiper"]
-	path = emacs.d/lisp/swiper
-	url = https://github.com/abo-abo/swiper.git
 [submodule "emacs.d/lisp/smex"]
 	path = emacs.d/lisp/smex
 	url = https://github.com/nonsequitur/smex.git
