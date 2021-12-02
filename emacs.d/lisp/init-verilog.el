@@ -1,6 +1,6 @@
 
 (add-to-list 'load-path
-             (expand-file-name "verilog-mode" user-emacs-directory))
+             (expand-file-name "qelpa/verilog-mode" user-emacs-directory))
 
 (require 'verilog-mode)
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
