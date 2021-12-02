@@ -78,8 +78,6 @@ if [[ "$inst_en" == "true" ]]; then
     # vim
     clean_file ~/.vim
     ln -s ${dir_name}/vim   ~/.vim
-    clean_file ~/.vimrc
-    ln -s ${dir_name}/vimrc ~/.vimrc
 
     # emacs
     clean_file ~/.emacs.d
