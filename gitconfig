@@ -40,3 +40,8 @@
 #git config --global alias.cob "checkout -b"
 #(Without --global, you get per-project aliases.)
  
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

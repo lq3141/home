@@ -19,3 +19,6 @@
 [submodule "vim/pack/plugin/start/vim-surround"]
 	path = vim/pack/plugin/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/plugin/legacy/vim-pathogen"]
+	path = vim/pack/plugin/legacy/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git

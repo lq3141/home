@@ -1,9 +1,16 @@
+" if vim version is less than 800, there's no native package manager.
+" Use pathogen. It's simple and effective.
+if v:version < 800
+    call pathogen#infect()
+    call pathogen#helptags()
+endif
 
 syntax on
 filetype plugin indent on
 filetype plugin on
 
-set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+" powerline is about to deprecate py2.7 support
+"set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " terminal 256
 let g:solarized_termcolors=256
@@ -82,6 +89,3 @@ au FileType xml setlocal foldmethod=syntax
 "
 set diffopt=filler,iwhite
 
-"set nocompatible
-"filetype plugin on
-"runtime ~/.vim/bundle/vim-matchit/plugin/matchit.vim

@@ -119,3 +119,5 @@ elif [ `uname -o` == "GNU/Linux" ]; then
     #unset __conda_setup
     ## <<< conda init <<<
 fi
+
+PATH=/home/qili/.local/bin:$PATH
