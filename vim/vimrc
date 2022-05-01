@@ -37,7 +37,25 @@ if has("gui_running")
   endif
 endif
 
+set tags=./.tags;,.tags
+set nocst
+
+let g:verilog_syntax_fold_lst="function,task,block,comment,define,instance"
+au FileType verilog_systemverilog setlocal foldmethod=syntax
+
+let g:hl_matchit_enable_on_vim_startup = 1
+
+set colorcolumn=80
+
+set cursorcolumn
+
+let g:snipMate = { 'snippet_version' : 1 }
+"ActivateAddons vim-snippets snipmate
+
+autocmd FileType verilog_systemverilog setlocal commentstring=\/\/\ %s
+
 "" Regular
+set wildmenu
 set nu
 set incsearch
 set hlsearch
@@ -48,31 +66,43 @@ set et
 set ai
 set si
 set ic
+set magic
+
+set noerrorbells
+set novisualbell
+
+set nobackup
+set nowb
+set noswapfile
 
 " status line
 set laststatus=2
 
-function! CurDir()
-    let curdir = substitute( getcwd(),'/home/bruce.li',"~/","g")
-    return curdir
-endfunction
-
-set statusline=
-set statusline+=%-3.3n\                         " Buffer
-set statusline+=%f\                             " filename
-set statusline+=%h%m%r%w                        " flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'},    " File type
-set statusline+=%{&encoding},                   " Encoding
-set statusline+=%{&fileformat}]\ \              " Fileformat
-"set statusline+=CWD:\ %r%{CurDir()}%h
-set statusline+=%=                              " Right align
-set statusline+=0x%-8B\                         " Current char
-set statusline+=%-14.(%l,%c%V%)\ %<%P           " offset
+" lightline plugin is better option than code below
+"function! CurDir()
+"    let curdir = substitute( getcwd(),'/home/bruce.li',"~/","g")
+"    return curdir
+"endfunction
+"
+"set statusline=
+"set statusline+=%-3.3n\                         " Buffer
+"set statusline+=%f\                             " filename
+"set statusline+=%h%m%r%w                        " flags
+"set statusline+=\[%{strlen(&ft)?&ft:'none'},    " File type
+"set statusline+=%{&encoding},                   " Encoding
+"set statusline+=%{&fileformat}]\ \              " Fileformat
+""set statusline+=CWD:\ %r%{CurDir()}%h
+"set statusline+=%=                              " Right align
+"set statusline+=0x%-8B\                         " Current char
+"set statusline+=%-14.(%l,%c%V%)\ %<%P           " offset
 
 " mapping
 let mapleader=","
 
 map <leader>ls :ls<cr>
+
+map <C-j> 5j
+map <C-k> 5k
 
 " maybe helpful command
 " set formatoptions-=r
@@ -89,3 +119,10 @@ au FileType xml setlocal foldmethod=syntax
 "
 set diffopt=filler,iwhite
 
+"indent_guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
